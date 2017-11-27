@@ -7,6 +7,7 @@ class BlogPostsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
   end
 
   def edit
@@ -44,7 +45,7 @@ class BlogPostsController < ApplicationController
  	@blog_post.destroy
 
  	respond_to do |format|
- 		format.html { redirect_to blog_post_path, notice: "Your Blog Post was DESTROOOOOYEEEEDDDDDDD!!!!"}
+ 		format.html { redirect_to blog_posts_path, notice: "Your Blog Post was DESTROOOOOYEEEEDDDDDDD!!!!"}
  	end
 
   end
